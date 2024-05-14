@@ -97,6 +97,9 @@ public class Game {
         for(WinningStrategy ws : winningStrategies){
             ws.handleUndo(board,m);
         }
+        if(this.game_status.equals(GAME_STATUS.SUCCESS)){
+            game_status = GAME_STATUS.IN_PROGRESS;
+        }
     }
     public static GameHelper getInstance() {
         return new GameHelper();
